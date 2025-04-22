@@ -1,0 +1,50 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <div class="navbar-logo">
+      <a routerLink="/">🏥 Bệnh viện Thực tập</a>
+    </div>
+    <ul class="navbar-links">
+      <li><a routerLink="/">Trang Chủ</a></li>
+
+      <!-- Tin Tức Dropdown -->
+      <li class="dropdown">
+        <a routerLink="/home">Tin Tức & Sự Kiện</a>
+        <ul class="dropdown-content">
+          <li><a routerLink="/tin-tuc/y-hoc">Y học thường thức</a></li>
+          <li><a routerLink="/tin-tuc/su-kien">Sự kiện bệnh viện</a></li>
+          <li><a routerLink="/tin-tuc/hoi-thao">Hội thảo chuyên đề</a></li>
+        </ul>
+      </li>
+
+      <!-- Dịch Vụ Dropdown -->
+      <li class="dropdown">
+        <a routerLink="/dich-vu/tong-quat">Dịch Vụ Y Tế</a>
+        <ul class="dropdown-content">
+          <li><a routerLink="/dich-vu/tong-quat">Khám tổng quát</a></li>
+          <li><a routerLink="/dich-vu/doanh-nghiep">Khám sức khỏe doanh nghiệp</a></li>
+        </ul>
+      </li>
+
+      <li><a routerLink="/bac-si">Đội Ngũ Bác Sĩ</a></li>
+      <li><a routerLink="/chuyen-khoa">Chuyên Khoa</a></li>
+
+      <!-- Đặt Lịch Dropdown -->
+      <li class="dropdown">
+        <a routerLink="/dat-lich/theo-chuyen-khoa">Đặt Lịch Khám</a>
+        <ul class="dropdown-content">
+          <li><a routerLink="/dat-lich/theo-chuyen-khoa">Theo Chuyên Khoa</a></li>
+          <li><a routerLink="/dat-lich/theo-bac-si">Theo Bác Sĩ</a></li>
+        </ul>
+      </li>
+
+      <li><a routerLink="/tuyen-dung">Tuyển Dụng</a></li>
+      <li><a routerLink="/lien-he">Liên Hệ</a></li>
+    </ul>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="navbar-search">
+    <input type="text" placeholder="Tìm kiếm bác sĩ, dịch vụ..." />
+    <button>🔍</button>
+  </div>
+</nav>

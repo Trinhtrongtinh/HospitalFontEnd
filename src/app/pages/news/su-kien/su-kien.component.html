@@ -1,0 +1,22 @@
+<div class="news-page-container">
+  <div class="breadcrumb">
+    <a href="/">Trang chủ</a>
+    <span class="separator">/</span>
+    <span class="current">Sự kiện bệnh viện</span>
+  </div>
+
+  <div class="page-title">
+    <h1>Sự kiện bệnh viện</h1>
+  </div>
+
+  <div class="news-grid">
+    <app-news-card
+      *ngFor="let item of newsItems"
+      [image]="item.image"
+      [title]="item.title"
+      [date]="item.date"
+      [excerpt]="item.excerpt"
+      [link]="item.link"
+    ></app-news-card>
+  </div>
+</div>

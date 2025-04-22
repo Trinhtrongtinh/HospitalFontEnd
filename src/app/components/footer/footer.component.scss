@@ -1,0 +1,378 @@
+// Variables
+$primary-color: #0066b3;
+$secondary-color: #00a651;
+$accent-color: #e30613;
+$light-blue: #e0f7fa;
+$dark-blue: #1e3c72;
+$text-color: #333;
+$light-text: #fff;
+$font-family: 'Roboto', Arial, sans-serif;
+$border-radius: 8px;
+$box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+// Footer Styles
+.footer {
+  position: relative;
+  font-family: $font-family;
+  color: $text-color;
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+
+.footer-main {
+  position: relative;
+  background-color: $light-blue;
+  background-image: url('/assets/images/footer-bg.png');
+  background-size: cover;
+  background-position: center;
+  padding: 50px 0 80px;
+  overflow: hidden;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-image: url('/assets/images/wave.svg');
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.footer-logo {
+  text-align: center;
+  margin-bottom: 30px;
+  
+  img {
+    width: 120px;
+    height: auto;
+  }
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.footer-info {
+  flex: 1;
+  min-width: 300px;
+  
+  .footer-title {
+    color: $primary-color;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 20px;
+    border-bottom: 2px solid $primary-color;
+    padding-bottom: 10px;
+  }
+  
+  .info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+    
+    .label {
+      font-weight: 600;
+      margin-right: 10px;
+      min-width: 180px;
+    }
+    
+    .value {
+      color: #555;
+    }
+  }
+}
+
+.footer-links {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  
+  .link-column {
+    flex: 1;
+    min-width: 200px;
+    
+    .column-title {
+      color: $primary-color;
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0 0 20px;
+      border-bottom: 2px solid $primary-color;
+      padding-bottom: 10px;
+    }
+    
+    .link-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        margin-bottom: 10px;
+        
+        a {
+          color: $text-color;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          display: flex;
+          align-items: center;
+          
+          &::before {
+            content: '•';
+            color: $primary-color;
+            margin-right: 8px;
+          }
+          
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+        
+        img {
+          width: 24px;
+          height: 24px;
+        }
+        
+        &:hover {
+          transform: translateY(-3px);
+        }
+        
+        &.email {
+          background-color: #D44638;
+        }
+        
+        &.facebook {
+          background-color: #3b5998;
+        }
+        
+        &.zalo {
+          background-color: #0068ff;
+        }
+        
+        &.map {
+          background-color: #4285F4;
+        }
+      }
+    }
+  }
+}
+
+.footer-disclaimer {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: $border-radius;
+  padding: 20px;
+  margin-bottom: 20px;
+  
+  .disclaimer-text {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 15px;
+    text-align: justify;
+  }
+  
+  .website-notice {
+    font-size: 14px;
+    font-weight: 600;
+    color: $accent-color;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.footer-copyright {
+  background-color: $primary-color;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  
+  p {
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
+// Floating contact buttons
+.floating-contact {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+  
+  .contact-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    
+    img {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 5px;
+    }
+    
+    &.register {
+      background-color: $primary-color;
+      
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+    
+    &.hotline {
+      background-color: $accent-color;
+      
+      &:hover {
+        background-color: darken($accent-color, 10%);
+      }
+      
+      .phone-number {
+        font-size: 10px;
+      }
+    }
+    
+    &.location {
+      background-color: $secondary-color;
+      
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+    }
+  }
+}
+
+// Back to top button
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 100;
+  
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    transform: translateY(-3px);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 992px) {
+  .footer-content {
+    flex-direction: column;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-main {
+    padding: 30px 0 80px;
+  }
+  
+  .floating-contact {
+    right: 10px;
+    
+    .contact-btn {
+      width: 60px;
+      height: 60px;
+      font-size: 10px;
+      
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+// JavaScript for back to top button
+// Add this to your component's TypeScript file
+/*
+  ngOnInit() {
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+*/

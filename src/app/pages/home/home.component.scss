@@ -1,0 +1,850 @@
+// Variables
+$primary-color: #0066b3;
+$secondary-color: #00a651;
+$accent-color: #e30613;
+$light-blue: #e0f7fa;
+$gradient-blue: linear-gradient(90deg, #1e3c72 0%, #2a5298 50%, #2c8ea6 100%);
+$gradient-green: linear-gradient(90deg, #1e3c72 0%, #2a5298 50%, #00a651 100%);
+$text-color: #333;
+$light-text: #fff;
+$font-family: 'Roboto', Arial, sans-serif;
+$border-radius: 8px;
+$box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+// Hero Slider Styles - Full width image slider
+.hero-slider {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+  
+  .slider-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 500px;
+    
+    @media (max-width: 768px) {
+      height: 300px;
+    }
+  }
+  
+  .slide {
+    min-width: 100%;
+    position: relative;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  .slider-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    
+    .slider-btn {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.7);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: white;
+      }
+      
+      &.prev {
+        left: 20px;
+      }
+      
+      &.next {
+        right: 20px;
+      }
+    }
+    
+    .slider-dots {
+      display: flex;
+      gap: 8px;
+      
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        
+        &.active {
+          background-color: white;
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+// Hospital Introduction Section
+.hospital-intro-section {
+  .intro-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+    @media (min-width: 992px) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  
+  .intro-image {
+    flex: 1;
+    
+    img {
+      width: 100%;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
+    }
+  }
+  
+  .intro-text {
+    flex: 1;
+    padding: 0 20px;
+    
+    p {
+      margin-bottom: 20px;
+      font-size: 16px;
+      
+      @media (min-width: 768px) {
+        font-size: 18px;
+      }
+    }
+    
+    .intro-quote {
+      font-style: italic;
+      color: $accent-color;
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 30px;
+      
+      p {
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+// Global Styles
+.home-container {
+  font-family: $font-family;
+  color: $text-color;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.section {
+  padding: 60px 0;
+  margin-bottom: 20px;
+  
+  &:nth-child(even) {
+    background-color: $light-blue;
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+  
+  .heartbeat-icon {
+    margin-bottom: 15px;
+    
+    img {
+      height: 40px;
+    }
+  }
+  
+  .section-title {
+    color: $primary-color;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+  }
+  
+  .section-subtitle {
+    color: $secondary-color;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  
+  .section-description {
+    max-width: 800px;
+    margin: 15px auto 0;
+    font-size: 16px;
+    color: #666;
+  }
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: $primary-color;
+  border: 2px solid $primary-color;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: rgba($primary-color, 0.1);
+    transform: translateY(-2px);
+  }
+}
+
+// Facilities Section
+.facilities-section {
+  .facilities-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+    @media (min-width: 992px) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  
+  .facilities-text {
+    @media (min-width: 992px) {
+      flex: 1;
+      padding-right: 40px;
+    }
+    
+    p {
+      margin-bottom: 25px;
+    }
+  }
+  
+  .facilities-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      
+      .check-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        background-color: $secondary-color;
+        color: white;
+        border-radius: 50%;
+        margin-right: 12px;
+        font-size: 14px;
+      }
+    }
+  }
+  
+  .facilities-image {
+    position: relative;
+    
+    @media (min-width: 992px) {
+      flex: 1;
+    }
+    
+    img {
+      width: 100%;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
+    }
+    
+    .image-navigation {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      
+      .nav-btn {
+        background-color: rgba(255, 255, 255, 0.7);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background-color: white;
+        }
+        
+        &.prev {
+          margin-left: 10px;
+        }
+        
+        &.next {
+          margin-right: 10px;
+        }
+      }
+    }
+    
+    .image-indicators {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      
+      .indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        
+        &.active {
+          background-color: white;
+        }
+      }
+    }
+  }
+}
+
+// Specialties Section
+.specialties-section {
+  background: $gradient-blue;
+  color: white;
+  
+  .section-header {
+    .section-title {
+      color: white;
+    }
+  }
+  
+  .specialties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .specialty-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    .specialty-icon {
+      width: 100px;
+      height: 100px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      
+      img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+    
+    h3 {
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0;
+    }
+  }
+  
+  .indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 8px;
+    
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+      
+      &.active {
+        background-color: white;
+      }
+    }
+  }
+}
+
+// Doctors Team Section
+.doctors-section {
+  .doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .doctor-card {
+    background-color: white;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+    
+    .doctor-image {
+      position: relative;
+      
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+      
+      .hospital-logo {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+    
+    .doctor-info {
+      padding: 15px;
+      text-align: center;
+      
+      .doctor-name {
+        color: $primary-color;
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0 0 5px;
+      }
+      
+      .doctor-fullname {
+        color: $text-color;
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0 0 5px;
+      }
+      
+      .doctor-specialty {
+        color: $accent-color;
+        font-size: 14px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Medical Services Section
+.services-section {
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .service-card {
+    position: relative;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+    
+    .service-image {
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+    }
+    
+    .service-icon {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 60px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    
+    .service-title {
+      background-color: white;
+      padding: 30px 15px 15px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+}
+
+// News Section
+.news-section {
+  .news-tabs {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .tab-header {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 30px;
+    overflow-x: auto;
+    
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #666;
+      cursor: pointer;
+      white-space: nowrap;
+      
+      &.active {
+        color: $primary-color;
+        border-bottom: 3px solid $primary-color;
+        margin-bottom: -2px;
+      }
+      
+      &:hover:not(.active) {
+        color: $primary-color;
+      }
+    }
+  }
+  
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    @media (min-width: 992px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  .news-card {
+    background-color: white;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+    height: 100%;
+    
+    &:first-child {
+      @media (min-width: 768px) {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-direction: row;
+        
+        .news-image {
+          flex: 1;
+        }
+        
+        .news-content {
+          flex: 1;
+        }
+      }
+    }
+    
+    .news-image {
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+    }
+    
+    .news-content {
+      padding: 20px;
+      
+      .news-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0 0 10px;
+        
+        @media (min-width: 768px) {
+          font-size: 18px;
+        }
+      }
+      
+      .news-date {
+        color: #888;
+        font-size: 14px;
+        margin: 0 0 15px;
+      }
+      
+      .news-link {
+        color: $primary-color;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Appointment Section
+.appointment-section {
+  .appointment-slider {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+  }
+  
+  .slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    
+    &.prev {
+      left: 0;
+    }
+    
+    &.next {
+      right: 0;
+    }
+  }
+  
+  .appointment-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .appointment-card {
+    background-color: white;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+    
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .appointment-content {
+      padding: 20px;
+      
+      h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0 0 10px;
+      }
+      
+      p {
+        font-size: 14px;
+        color: #666;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Floating Contact Buttons
+.floating-contact {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+  
+  .contact-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    
+    img {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 5px;
+    }
+    
+    &.register {
+      background-color: $primary-color;
+      
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+    
+    &.hotline {
+      background-color: $accent-color;
+      
+      &:hover {
+        background-color: darken($accent-color, 10%);
+      }
+      
+      .phone-number {
+        font-size: 10px;
+      }
+    }
+    
+    &.location {
+      background-color: $secondary-color;
+      
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 0;
+  }
+  
+  .section-header {
+    .section-title {
+      font-size: 24px;
+    }
+    
+    .section-subtitle {
+      font-size: 18px;
+    }
+  }
+  
+  .floating-contact {
+    right: 10px;
+    
+    .contact-btn {
+      width: 60px;
+      height: 60px;
+      font-size: 10px;
+      
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
