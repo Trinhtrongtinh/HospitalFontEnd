@@ -1,0 +1,520 @@
+// Variables
+$primary-color: #0066b3;
+$secondary-color: #00a651;
+$accent-color: #e30613;
+$light-blue: #e0f7fa;
+$gradient-blue: linear-gradient(90deg, #1e3c72 0%, #2a5298 50%, #2c8ea6 100%);
+$text-color: #333;
+$light-text: #fff;
+$font-family: 'Roboto', Arial, sans-serif;
+$border-radius: 8px;
+$box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+// Specialties Page Container
+.specialties-page-container {
+  font-family: $font-family;
+  color: $text-color;
+  line-height: 1.6;
+}
+
+// Banner Image
+.banner-image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Breadcrumb
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .separator {
+    margin: 0 8px;
+    color: #999;
+  }
+  
+  .current {
+    color: #666;
+    font-weight: 500;
+  }
+}
+
+// Departments Section
+.departments-section {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  &:nth-child(odd) {
+    background-color: $light-blue;
+  }
+}
+
+// Section Title
+.section-title {
+  text-align: center;
+  color: $primary-color;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 40px;
+  text-transform: uppercase;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: $accent-color;
+  }
+}
+
+// Departments Grid
+.departments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  @media (max-width: 576px) {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+// Department Card
+.department-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f8ff;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: $text-color;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .department-icon {
+    width: 80px;
+    height: 80px;
+    background-color: $primary-color;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    
+    img {
+      width: 45px;
+      height: 45px;
+      filter: brightness(0) invert(1);
+    }
+  }
+  
+  .department-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+// Hospital Introduction Section
+.hospital-intro-section {
+  padding: 60px 20px;
+  background: linear-gradient(to right, #e0f7fa, #f0f8ff);
+  
+  .intro-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    @media (min-width: 992px) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+  
+  .intro-image {
+    flex: 1;
+    margin-bottom: 30px;
+    
+    @media (min-width: 992px) {
+      margin-bottom: 0;
+      margin-right: 40px;
+    }
+    
+    img {
+      width: 100%;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
+    }
+  }
+  
+  .intro-content {
+    flex: 1;
+    text-align: center;
+    
+    @media (min-width: 992px) {
+      text-align: left;
+    }
+    
+    .intro-title {
+      color: $primary-color;
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0 0 15px;
+      text-transform: uppercase;
+    }
+    
+    .heartbeat-icon {
+      margin-bottom: 15px;
+      
+      img {
+        height: 30px;
+      }
+    }
+    
+    .intro-subtitle {
+      color: $accent-color;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 20px;
+      font-style: italic;
+    }
+    
+    .intro-text {
+      font-size: 16px;
+      line-height: 1.8;
+      margin: 0;
+      text-align: justify;
+    }
+  }
+}
+
+// Treatment Process Section
+.treatment-process-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  
+  .process-steps {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .process-step {
+    position: relative;
+    background-color: white;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+    
+    .step-number {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 40px;
+      height: 40px;
+      background-color: $primary-color;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 700;
+      z-index: 1;
+    }
+    
+    .step-image {
+      height: 200px;
+      overflow: hidden;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    
+    .step-content {
+      padding: 20px;
+      
+      .step-title {
+        color: $primary-color;
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0 0 15px;
+        text-align: center;
+      }
+      
+      .step-details {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+          position: relative;
+          padding-left: 20px;
+          margin-bottom: 8px;
+          
+          &::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: $primary-color;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// News Section
+.news-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  .heartbeat-icon {
+    text-align: center;
+    margin-bottom: 30px;
+    
+    img {
+      height: 30px;
+    }
+  }
+  
+  .news-tabs {
+    .tab-header {
+      display: flex;
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 30px;
+      overflow-x: auto;
+      
+      .tab-btn {
+        background: none;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #666;
+        cursor: pointer;
+        white-space: nowrap;
+        
+        &.active {
+          color: $primary-color;
+          border-bottom: 3px solid $primary-color;
+          margin-bottom: -2px;
+        }
+        
+        &:hover:not(.active) {
+          color: $primary-color;
+        }
+      }
+    }
+    
+    .news-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      
+      @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      @media (min-width: 992px) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      
+      .news-item {
+        background-color: white;
+        border-radius: $border-radius;
+        overflow: hidden;
+        box-shadow: $box-shadow;
+        height: 100%;
+        
+        &:first-child {
+          @media (min-width: 768px) {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: row;
+            
+            .news-image {
+              flex: 1;
+            }
+            
+            .news-content {
+              flex: 1;
+            }
+          }
+        }
+        
+        .news-image {
+          img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+          }
+        }
+        
+        .news-content {
+          padding: 20px;
+          
+          .news-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 10px;
+            
+            @media (min-width: 768px) {
+              font-size: 18px;
+            }
+          }
+          
+          .news-date {
+            color: #888;
+            font-size: 14px;
+            margin: 0 0 15px;
+          }
+          
+          .news-link {
+            color: $primary-color;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Floating Contact Buttons
+.floating-contact {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+  
+  .contact-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    
+    img {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 5px;
+    }
+    
+    &.register {
+      background-color: $primary-color;
+      
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+    
+    &.hotline {
+      background-color: $accent-color;
+      
+      &:hover {
+        background-color: darken($accent-color, 10%);
+      }
+      
+      .phone-number {
+        font-size: 10px;
+      }
+    }
+    
+    &.location {
+      background-color: $secondary-color;
+      
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 24px;
+  }
+  
+  .floating-contact {
+    right: 10px;
+    
+    .contact-btn {
+      width: 60px;
+      height: 60px;
+      font-size: 10px;
+      
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
