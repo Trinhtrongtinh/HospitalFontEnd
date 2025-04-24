@@ -1,179 +1,194 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 2rem;
-    background: linear-gradient(90deg, #1e3c72 0%, #2a5298 50%, #2c8ea6 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background: linear-gradient(90deg, #1e3c72 0%, #2a5298 50%, #2c8ea6 100%);
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 70px;
+  font-family: 'Roboto', Arial, sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  margin-right: 2rem;
+  
+  a {
     color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    height: 70px;
-    font-family: 'Roboto', Arial, sans-serif;
-  }
-  
-  .navbar-left {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
     display: flex;
     align-items: center;
+    
+    &:hover {
+      color: #e0f7fa;
+    }
   }
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
   
-  .navbar-logo {
-    margin-right: 2rem;
+  li {
+    position: relative;
+    margin: 0 0.5rem;
     
     a {
       color: white;
       text-decoration: none;
-      font-size: 1.5rem;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
+      padding: 0.5rem 0.8rem;
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      transition: all 0.3s ease;
       
       &:hover {
         color: #e0f7fa;
       }
     }
   }
+}
+
+.dropdown {
+  position: relative;
   
-  .navbar-links {
-    display: flex;
-    list-style: none;
+  &:hover .dropdown-content {
+    display: block;
+  }
+  
+  > a::after {
+    content: " ▼";
+    font-size: 0.7rem;
+    vertical-align: middle;
+    margin-left: 3px;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-radius: 4px;
+  top: 100%;
+  left: 0;
+  
+  li {
     margin: 0;
-    padding: 0;
     
-    li {
-      position: relative;
-      margin: 0 0.5rem;
-      
-      a {
-        color: white;
-        text-decoration: none;
-        padding: 0.5rem 0.8rem;
-        display: block;
-        font-size: 0.95rem;
-        font-weight: 500;
-        letter-spacing: 0.3px;
-        transition: all 0.3s ease;
-        
-        &:hover {
-          color: #e0f7fa;
-        }
-      }
-    }
-  }
-  
-  .dropdown {
-    position: relative;
-    
-    &:hover .dropdown-content {
-      display: block;
-    }
-    
-    a::after {
-      content: " ▼";
-      font-size: 0.7rem;
-      vertical-align: middle;
-      margin-left: 3px;
-    }
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-    border-radius: 4px;
-    
-    li {
-      margin: 0;
-      
-      a {
-        color: #333;
-        padding: 0.8rem 1rem;
-        font-size: 0.9rem;
-        
-        &:hover {
-          background-color: #f5f5f5;
-          color: #1e3c72;
-        }
-      }
-    }
-  }
-  
-  .navbar-search {
-    display: flex;
-    align-items: center;
-    
-    input {
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 20px 0 0 20px;
-      outline: none;
+    a {
+      color: #333;
+      padding: 0.8rem 1rem;
       font-size: 0.9rem;
-      width: 220px;
-      height: 36px;
-    }
-    
-    button {
-      background-color: white;
-      border: none;
-      border-radius: 0 20px 20px 0;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      text-decoration: none;
       
       &:hover {
         background-color: #f5f5f5;
+        color: #1e3c72;
       }
     }
   }
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
   
-  // Additional styles to match the image
-  .hotline-container {
+  input {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    font-size: 0.9rem;
+    width: 220px;
+    height: 36px;
+    box-sizing: border-box;
+    vertical-align: middle; 
+    margin: 0; 
+  }
+  
+  button {
+    background-color: white;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    height: 36px;
     display: flex;
     align-items: center;
-    margin-right: 2rem;
-    
-    .hotline-icon {
-      margin-right: 0.5rem;
-      font-size: 1.2rem;
-    }
-    
-    .hotline-info {
-      display: flex;
-      flex-direction: column;
-      
-      .hotline-label {
-        font-size: 0.8rem;
-        opacity: 0.9;
-      }
-      
-      .hotline-number {
-        font-size: 1rem;
-        font-weight: bold;
-      }
-    }
-  }
-  
-  // Add this to your HTML if you want to include the hotline section shown in the image
-  .register-button {
-    background-color: rgba(255, 255, 255, 0.2);
-    border: 1px solid white;
-    color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 20px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0; 
+    margin-left: -1px; 
     
     &:hover {
-      background-color: white;
-      color: #1e3c72;
+      background-color: #f5f5f5;
     }
   }
+}
+
+// Additional styles to match the image
+.hotline-container {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
   
-  .navbar .dropdown:hover .dropdown-content {
-    display: block;
+  .hotline-icon {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
   }
+  
+  .hotline-info {
+    display: flex;
+    flex-direction: column;
+    
+    .hotline-label {
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+    
+    .hotline-number {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
+}
+
+// Add this to your HTML if you want to include the hotline section shown in the image
+.register-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid white;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: white;
+    color: #1e3c72;
+  }
+}
+
+.navbar-spacer {
+  height: 70px;
+  width: 100%;
+}
