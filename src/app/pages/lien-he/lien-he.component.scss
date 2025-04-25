@@ -12,6 +12,19 @@ $gradient-green: linear-gradient(to right, #007bff, #28a745);
     flex-wrap: wrap;
     gap: 1.5rem;
     margin-bottom: 2rem;
+    
+
+    .contact-box1{
+      display: flex;
+      flex-direction: column;
+      flex:2;
+    }
+    .contact-box2{
+      flex-direction: column;
+      display: flex;
+      flex:1;
+    }
+    
 
     .card {
       background: #fff;
@@ -62,11 +75,8 @@ $gradient-green: linear-gradient(to right, #007bff, #28a745);
     }
 
     .contact-form {
-      flex: 1 1 100%;
-      max-width: 400px;
-      margin-left: auto; /* Căn phải phần tử trong container */
-      margin-right: 0;  /* Đảm bảo không có khoảng cách bên phải */
-
+      flex: 1;
+      margin-top: 8%;
       h3 {
         color: #00a67e;
         margin-bottom: 1rem;
@@ -108,3 +118,5 @@ $gradient-green: linear-gradient(to right, #007bff, #28a745);
     }
   }
 }
+
+
