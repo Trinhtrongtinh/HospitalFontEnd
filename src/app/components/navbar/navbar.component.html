@@ -1,51 +1,129 @@
-<nav class="navbar">
-  <div class="navbar-left">
-    <div class="navbar-logo">
-      <a routerLink="/">🏥 Bệnh viện ABC</a>
+<header class="header">
+  <!-- Top Header with Gradient Background -->
+  <div class="top-header">
+    <div class="container">
+      <div class="logo-container">
+        <a href="/" class="logo">
+          <img src="/assets/images/logo-hoa-binh.png" alt="Bệnh viện Đa khoa Hòa Bình">
+        </a>
+      </div>
+      
+      <div class="contact-info">
+        <div class="contact-item hotline">
+          <img src="/assets/images/icons/phone-icon.svg" alt="Hotline">
+          <div class="contact-text">
+            <span class="label">Hotline</span>
+            <span class="value">0976 091 115</span>
+          </div>
+        </div>
+        
+        <div class="contact-item emergency">
+          <img src="/assets/images/icons/emergency-icon.svg" alt="Cấp cứu">
+          <div class="contact-text">
+            <span class="label">Cấp cứu</span>
+            <span class="value">02203 551 115</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="header-actions">
+        <a href="/dat-lich" class="register-btn">ĐĂNG KÝ KHÁM</a>
+        
+        <div class="language-selector">
+          <a href="#" class="language-btn">VI</a>
+        </div>
+        
+        <div class="top-links desktop-only">
+          <a href="/hom-thu-gop-y">HÒM THƯ GÓP Ý</a>
+          <a href="/tuyen-dung">TUYỂN DỤNG</a>
+        </div>
+      </div>
     </div>
-    <ul class="navbar-links">
-      <li><a routerLink="/">Trang Chủ</a></li>
-
-      <!-- Tin Tức Dropdown -->
-      <li class="dropdown">
-        <a href="javascript:void(0)">Tin Tức & Sự Kiện</a>
-        <ul class="dropdown-content">
-          <li><a routerLink="/tin-tuc/y-hoc">Y học thường thức</a></li>
-          <li><a routerLink="/tin-tuc/su-kien">Sự kiện bệnh viện</a></li>
-          <li><a routerLink="/tin-tuc/hoi-thao">Hội thảo chuyên đề</a></li>
-        </ul>
-      </li>
-
-      <!-- Dịch Vụ Dropdown -->
-      <li class="dropdown">
-        <a href="javascript:void(0)">Dịch Vụ Y Tế</a>
-        <ul class="dropdown-content">
-          <li><a routerLink="/dich-vu/tong-quat">Khám tổng quát</a></li>
-          <li><a routerLink="/dich-vu/doanh-nghiep">Khám sức khỏe doanh nghiệp</a></li>
-        </ul>
-      </li>
-
-      <li><a routerLink="/bac-si">Đội Ngũ Bác Sĩ</a></li>
-      <li><a routerLink="/chuyen-khoa">Chuyên Khoa</a></li>
-
-      <!-- Đặt Lịch Dropdown -->
-      <li class="dropdown">
-        <a href="javascript:void(0)">Đặt Lịch Khám</a>
-        <ul class="dropdown-content">
-          <li><a routerLink="/dat-lich/theo-chuyen-khoa">Theo Chuyên Khoa</a></li>
-          <li><a routerLink="/dat-lich/theo-bac-si">Theo Bác Sĩ</a></li>
-        </ul>
-      </li>
-
-      <li><a routerLink="/tuyen-dung">Tuyển Dụng</a></li>
-      <li><a routerLink="/lien-he">Liên Hệ</a></li>
-    </ul>
   </div>
+  
+  <!-- Main Navigation -->
+  <nav class="main-nav">
+    <div class="container">
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <!-- Mobile Logo -->
+      <div class="mobile-logo">
+        <a href="/">
+          <img src="/assets/images/logo-hoa-binh.png" alt="Bệnh viện Đa khoa Hòa Bình">
+        </a>
+      </div>
+      
+      <!-- Mobile Language Selector -->
+      <div class="mobile-language">
+        <a href="#" class="language-btn">VI</a>
+      </div>
+      
+      <!-- Main Menu -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/">Trang chủ</a></li>
+        
+        <li class="has-dropdown">
+          <a href="javascript:void(0)">Về chúng tôi <i class="dropdown-arrow"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/gioi-thieu">Giới thiệu bệnh viện</a></li>
+            <li><a href="/tam-nhin">Tầm nhìn & Sứ mệnh</a></li>
+            <li><a href="/co-so-vat-chat">Cơ sở vật chất</a></li>
+          </ul>
+        </li>
+        
+        <li><a href="/chuyen-khoa">Chuyên khoa</a></li>
+        
+        <li><a href="/bac-si">Đội ngũ bác sĩ</a></li>
+        
+        <li class="has-dropdown">
+          <a href="javascript:void(0)">Bảng giá <i class="dropdown-arrow"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/bang-gia/kham-benh">Giá khám bệnh</a></li>
+            <li><a href="/bang-gia/xet-nghiem">Giá xét nghiệm</a></li>
+            <li><a href="/bang-gia/phau-thuat">Giá phẫu thuật</a></li>
+          </ul>
+        </li>
+        
+        <li class="has-dropdown">
+          <a href="javascript:void(0)">Dịch vụ y tế <i class="dropdown-arrow"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/dich-vu/tong-quat">Khám tổng quát</a></li>
+            <li><a href="/dich-vu/doanh-nghiep">Khám sức khỏe doanh nghiệp</a></li>
+          </ul>
+        </li>
+        
+        <li class="has-dropdown">
+          <a href="javascript:void(0)">Hỗ trợ <i class="dropdown-arrow"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/ho-tro/cau-hoi-thuong-gap">Câu hỏi thường gặp</a></li>
+            <li><a href="/ho-tro/lich-kham-benh-vien">Lịch khám bệnh viện</a></li>
+            <li><a href="/ho-tro/lich-kham-chuyen-gia">Lịch khám chuyên gia</a></li>
+          </ul>
+        </li>
+        
+        <li class="has-dropdown">
+          <a href="javascript:void(0)">Tin tức <i class="dropdown-arrow"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/tin-tuc/y-hoc">Y học thường thức</a></li>
+            <li><a href="/tin-tuc/su-kien">Sự kiện bệnh viện</a></li>
+            <li><a href="/tin-tuc/hoi-thao">Hội thảo chuyên đề</a></li>
+          </ul>
+        </li>
+        
+        <li><a href="/lien-he">Liên hệ</a></li>
+        
+        <!-- Mobile Only Links -->
+        <li class="mobile-only"><a href="/hom-thu-gop-y">Hòm thư góp ý</a></li>
+        <li class="mobile-only"><a href="/tuyen-dung">Tuyển dụng</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
-  <!-- Search Bar -->
-  <div class="navbar-search">
-    <input type="text" placeholder="Tìm kiếm bác sĩ, dịch vụ..." />
-    <button>🔍</button>
-  </div>
-</nav>
-<div class="navbar-spacer"></div>
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
