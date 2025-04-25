@@ -5,6 +5,7 @@ import { SuKienComponent } from './pages/news/su-kien/su-kien.component';
 import { HoiThaoComponent } from './pages/news/hoi-thao/hoi-thao.component';
 import { BacSiComponent } from './pages/bac-si/bac-si.component';
 import { ChuyenKhoaComponent } from './pages/chuyen-khoa/chuyen-khoa.component';
+import { LienHeComponent } from './pages/lien-he/lien-he.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -12,6 +13,6 @@ export const routes: Routes = [
     {path:'tin-tuc/su-kien',component:SuKienComponent},
     {path:'tin-tuc/hoi-thao',component:HoiThaoComponent},
     {path: 'bac-si', component:BacSiComponent},
-    {path: 'chuyen-khoa', component:ChuyenKhoaComponent}
+    {path: 'chuyen-khoa', component:ChuyenKhoaComponent},
+    {path: 'lien-he', component:LienHeComponent}
 ];
- 
