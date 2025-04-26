@@ -4,6 +4,7 @@ $dark-gray: #333;
 $gradient-green: linear-gradient(to right, #007bff, #28a745);
 
 .contact-container {
+  margin-top: 180px;
   display: flex;
   flex-wrap: nowrap; // không cho các phần tử wrap xuống hàng
   gap: 2rem;
