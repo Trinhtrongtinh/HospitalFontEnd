@@ -1,25 +1,53 @@
-import { CommonModule } from "@angular/common"
 import { Component, type OnInit, type OnDestroy } from "@angular/core"
 
 @Component({
   selector: "app-home",
-  standalone: true,
-  imports:[CommonModule],
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit, OnDestroy {
   currentSlide = 0
   slideInterval: any
+  slidesLoaded = 0
+  totalSlides = 3 // Update this if you change the number of slides
 
   ngOnInit() {
-    this.initSlider()
-    this.startSlideInterval()
+    this.preloadSliderImages()
     this.initBackToTop()
   }
 
   ngOnDestroy() {
     this.stopSlideInterval()
+  }
+
+  preloadSliderImages() {
+    const slides = document.querySelectorAll(".slide img")
+    this.totalSlides = slides.length
+
+    slides.forEach((element) => {
+      const img = element as HTMLImageElement
+
+      // If image is already loaded
+      if (img.complete) {
+        this.handleImageLoaded()
+      } else {
+        // Add load event listener
+        img.addEventListener("load", () => this.handleImageLoaded())
+      }
+
+      // Handle error case
+      img.addEventListener("error", () => this.handleImageLoaded())
+    })
+  }
+
+  handleImageLoaded() {
+    this.slidesLoaded++
+
+    // Initialize slider once all images are loaded
+    if (this.slidesLoaded === this.totalSlides) {
+      this.initSlider()
+      this.startSlideInterval()
+    }
   }
 
   initSlider() {
@@ -39,6 +67,9 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.goToSlide(index)
       })
     })
+
+    // Set initial slide
+    this.updateSlider()
   }
 
   changeSlide(direction: number) {
