@@ -1,16 +1,54 @@
 import { CommonModule } from "@angular/common"
-import { Component, type OnInit } from "@angular/core"
+import { Component, type OnInit, HostListener } from "@angular/core"
 
 @Component({
-  selector: "app-navbar",
+  selector: "app-header",
   standalone: true,
   imports: [CommonModule],
-  templateUrl: "./navbar.component.html",
-  styleUrls: ["./navbar.component.scss"],
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"],
 })
-export class NavbarComponent implements OnInit {
+export class HeaderComponent implements OnInit {
+  topHeaderHeight = 0;
+
   ngOnInit() {
-    this.initMobileMenu()
+    this.initMobileMenu();
+    this.setupScrollHandler();
+  }
+
+  // Thêm hàm để xử lý scroll
+  setupScrollHandler() {
+    // Tính chiều cao của top header sau khi render
+    setTimeout(() => {
+      const topHeader = document.querySelector('.top-header') as HTMLElement;
+      if (topHeader) {
+        this.topHeaderHeight = topHeader.offsetHeight;
+        // Kiểm tra vị trí scroll ban đầu
+        this.handleScroll();
+      }
+    }, 100);
+  }
+
+  // Sử dụng HostListener để lắng nghe sự kiện scroll
+  @HostListener('window:scroll', [])
+  handleScroll() {
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    const mainNav = document.querySelector('.main-nav') as HTMLElement;
+    const body = document.body;
+
+    if (mainNav) {
+      if (scrollPosition > this.topHeaderHeight) {
+        // Đã scroll qua top header
+        mainNav.style.transform = 'translateY(0)';
+        mainNav.classList.add('with-shadow');
+        body.classList.add('scrolled');
+      } else {
+        // Vẫn ở trong vùng top header
+        mainNav.style.transform = `translateY(${this.topHeaderHeight - scrollPosition}px)`;
+        mainNav.classList.remove('with-shadow');
+        body.classList.remove('scrolled');
+      }
+    }
   }
 
   initMobileMenu() {

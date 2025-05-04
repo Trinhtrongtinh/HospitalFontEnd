@@ -3,6 +3,12 @@
   <section class="hero-slider">
     <div class="slider-container">
       <div class="slider-wrapper" id="sliderWrapper">
+
+          <!-- Duplicate last slide for smooth transition -->
+        <div class="slide">
+          <img src="/assets/images/slider/slide3.jpg" alt="Công nghệ hiện đại">
+        </div>
+        
         <!-- Slide 1 -->
         <div class="slide">
           <img src="/assets/images/slider/slide1.jpg" alt="Cơ sở vật chất">
@@ -17,16 +23,24 @@
         <div class="slide">
           <img src="/assets/images/slider/slide3.jpg" alt="Công nghệ hiện đại">
         </div>
+
+        <!-- Duplicate first slide for smooth transition -->
+        <div class="slide">
+          <img src="/assets/images/slider/slide1.jpg" alt="Cơ sở vật chất">
+        </div>
+
       </div>
+
+      
       
       <div class="slider-controls">
-        <button class="slider-btn prev" id="prevBtn">❮</button>
+        <!-- <button class="slider-btn prev" id="prevBtn">❮</button> -->
         <div class="slider-dots" id="sliderDots">
           <span class="dot active" data-index="0"></span>
           <span class="dot" data-index="1"></span>
           <span class="dot" data-index="2"></span>
         </div>
-        <button class="slider-btn next" id="nextBtn">❯</button>
+        <!-- <button class="slider-btn next" id="nextBtn">❯</button> -->
       </div>
     </div>
   </section>
@@ -42,30 +56,36 @@
         <div class="service-image">
           <img src="/assets/images/services/corporate-checkup.jpg" alt="Khám doanh nghiệp">
         </div>
-        <div class="service-icon">
-          <img src="/assets/images/icons/stethoscope.svg" alt="Stethoscope icon">
+        <div class="service-content">
+          <div class="service-icon">
+            <img src="/assets/images/icons/stethoscope.svg" alt="Stethoscope icon">
+          </div>
+          <h3 class="service-title">Gói khám doanh nghiệp</h3>
         </div>
-        <h3 class="service-title">Gói khám doanh nghiệp</h3>
       </div>
       
       <div class="service-card">
         <div class="service-image">
           <img src="/assets/images/services/general-checkup.jpg" alt="Khám tổng quát">
         </div>
-        <div class="service-icon">
-          <img src="/assets/images/icons/stethoscope.svg" alt="Stethoscope icon">
+        <div class="service-content">
+          <div class="service-icon">
+            <img src="/assets/images/icons/stethoscope.svg" alt="Stethoscope icon">
+          </div>
+          <h3 class="service-title">Gói khám tổng quát</h3>
         </div>
-        <h3 class="service-title">Gói khám tổng quát</h3>
       </div>
       
       <div class="service-card">
         <div class="service-image">
           <img src="/assets/images/services/maternity.jpg" alt="Thai sản trọn gói">
         </div>
-        <div class="service-icon">
-          <img src="/assets/images/icons/baby.svg" alt="Baby icon">
-        </div class="service-title-block">
-        <h3 class="service-title">Thai sản trọn gói</h3>
+        <div class="service-content">
+          <div class="service-icon">
+            <img src="/assets/images/icons/baby.webp" alt="Baby icon">
+          </div>
+          <h3 class="service-title">Thai sản trọn gói</h3>
+        </div>
       </div>
     </div>
   </section>
@@ -73,15 +93,21 @@
   <!-- Hospital Introduction Section -->
   <section class="section hospital-intro-section">
     <div class="section-header">
-      <div class="heartbeat-icon">
-        <img src="/assets/images/heartbeat.svg" alt="Heartbeat">
-      </div>
       <h2 class="section-title">BỆNH VIỆN ĐA KHOA HÒA BÌNH – HẢI DƯƠNG</h2>
     </div>
     
     <div class="intro-content">
-      <div class="intro-image">
-        <img src="/assets/images/hospital-building.jpg" alt="Bệnh viện Đa khoa Hòa Bình">
+      <div class="intro-video">
+        <iframe 
+          width="560" 
+          height="315" 
+          src="https://www.youtube.com/embed/BZBvWXCp82s?si=OAUVCumcNwr3RNww" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
       </div>
       
       <div class="intro-text">
@@ -101,10 +127,9 @@
   <section class="section facilities-section">
     <div class="section-header">
       <div class="heartbeat-icon">
-        <img src="/assets/images/heartbeat.svg" alt="Heartbeat">
+        <img src="/assets/images/icons/heartbeat.png" alt="Heartbeat">
       </div>
-      <h2 class="section-title">CƠ SỞ VẬT CHẤT</h2>
-      <h3 class="section-subtitle">TRANG THIẾT BỊ HIỆN ĐẠI</h3>
+      <h2 class="section-title">CƠ SỞ VẬT CHẤT <br> TRANG THIẾT BỊ HIỆN ĐẠI</h2>
     </div>
     
     <div class="facilities-content">
@@ -127,161 +152,220 @@
         </ul>
       </div>
       
-      <div class="facilities-image">
-        <img src="/assets/images/modern-equipment.jpg" alt="Trang thiết bị hiện đại">
+      <div class="facilities-slider">
+        <div class="facilities-image active">
+          <img src="/assets/images/equipment/modern-equipment1.png" alt="Trang thiết bị hiện đại">
+        </div>
+        <div class="facilities-image">
+          <img src="/assets/images/equipment/modern-equipment2.png" alt="Thiết bị chẩn đoán">
+        </div>
+        <div class="facilities-image">
+          <img src="/assets/images/equipment/modern-equipment3.png" alt="Phòng mổ hiện đại">
+        </div>
+        <div class="facilities-image">
+          <img src="/assets/images/equipment/modern-equipment4.png" alt="Hệ thống xét nghiệm">
+        </div>
+        
         <div class="image-navigation">
           <button class="nav-btn prev">❮</button>
           <button class="nav-btn next">❯</button>
         </div>
+        
         <div class="image-indicators">
-          <span class="indicator active"></span>
-          <span class="indicator"></span>
-          <span class="indicator"></span>
-          <span class="indicator"></span>
+          <span class="indicator active" data-index="0"></span>
+          <span class="indicator" data-index="1"></span>
+          <span class="indicator" data-index="2"></span>
+          <span class="indicator" data-index="3"></span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Specialties Section -->
-  <section class="section specialties-section">
-    <div class="section-header">
-      <div class="heartbeat-icon">
-        <img src="/assets/images/heartbeat.svg" alt="Heartbeat">
-      </div>
-      <h2 class="section-title">CÁC CHUYÊN KHOA NỔI BẬT</h2>
+<!-- Specialties Section -->
+<section class="section specialties-section">
+  <div class="section-header">
+    <div class="heartbeat-icon">
+      <img src="/assets/images/icons/heartbeat2.png" alt="Heartbeat">
     </div>
-    
-    <div class="specialties-grid">
-      <div class="specialty-item">
-        <div class="specialty-icon">
-          <img src="/assets/images/icons/ear-nose-throat.svg" alt="Tai Mũi Họng">
+    <h2 class="section-title">CÁC CHUYÊN KHOA NỔI BẬT</h2>
+  </div>
+  
+  <div class="specialties-container">
+    <div class="specialties-wrapper" id="specialtiesWrapper">
+      <div class="specialties-track" id="specialtiesTrack">
+        <div class="specialty-item">
+          <div class="specialty-icon">
+            <img src="/assets/images/icons/phauthatgayme.png" alt="Gây mê">
+          </div>
+          <h3>KHOA NGOẠI – PHẪU THUẬT – GÂY MÊ HỒI SỨC</h3>
         </div>
-        <h3>Khoa liên chuyên khoa (TMH – RHM – Mắt)</h3>
-      </div>
-      
-      <div class="specialty-item">
-        <div class="specialty-icon">
-          <img src="/assets/images/icons/lab.svg" alt="Xét nghiệm">
+        
+        <div class="specialty-item">
+          <div class="specialty-icon">
+            <img src="/assets/images/icons/khoasan.png" alt="Sản">
+          </div>
+          <h3>KHOA SẢN</h3>
         </div>
-        <h3>Khoa Xét nghiệm</h3>
-      </div>
-      
-      <div class="specialty-item">
-        <div class="specialty-icon">
-          <img src="/assets/images/icons/pharmacy.svg" alt="Dược">
+        
+        <div class="specialty-item">
+          <div class="specialty-icon">
+            <img src="/assets/images/icons/Chan-doan.png" alt="Khoa Chẩn đoán hình ảnh">
+          </div>
+          <h3>KHOA CHẨN ĐOÁN HÌNH ẢNH - THĂM DÒ CHỨC NĂNG</h3>
         </div>
-        <h3>Khoa dược</h3>
-      </div>
-      
-      <div class="specialty-item">
-        <div class="specialty-icon">
-          <img src="/assets/images/icons/traditional-medicine.svg" alt="Y học cổ truyền">
+        
+        <div class="specialty-item">
+          <div class="specialty-icon">
+            <img src="/assets/images/icons/Khoa-kham-benh.png" alt="Y học cổ truyền">
+          </div>
+          <h3>KHOA Y HỌC CỔ TRUYỀN</h3>
         </div>
-        <h3>Khoa Y học cổ truyền</h3>
-      </div>
-      
-      <div class="specialty-item">
-        <div class="specialty-icon">
-          <img src="/assets/images/icons/microbiology.svg" alt="Kiểm soát nhiễm khuẩn">
+        
+        <div class="specialty-item">
+          <div class="specialty-icon">
+            <img src="/assets/images/icons/Khoa-noi-nhi.png" alt="Khoa Nội – Nhi">
+          </div>
+          <h3>KHOA NỘI – NHI</h3>
         </div>
-        <h3>Khoa Kiểm soát nhiễm khuẩn</h3>
-      </div>
-    </div>
-    
-    <div class="indicators">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-    </div>
-  </section>
 
-  <!-- Doctors Team Section -->
-  <section class="section doctors-section">
-    <div class="section-header">
-      <div class="heartbeat-icon">
-        <img src="/assets/images/heartbeat.svg" alt="Heartbeat">
+        <div class="specialty-item">
+          <div class="specialty-icon">
+            <img src="/assets/images/icons/phauthatgayme.png" alt="Khoa Tai Mũi Họng">
+          </div>
+          <h3>KHOA TAI MŨI HỌNG</h3>
+        </div>
+
+        <div class="specialty-item">
+          <div class="specialty-icon">
+            <img src="/assets/images/icons/Chan-doan.png" alt="Khoa Mắt">
+          </div>
+          <h3>KHOA MẮT</h3>
+        </div>
+
+        <div class="specialty-item">
+          <div class="specialty-icon">
+            <img src="/assets/images/icons/Khoa-kham-benh.png" alt="Khoa Răng Hàm Mặt">
+          </div>
+          <h3>KHOA RĂNG HÀM MẶT</h3>
+        </div>
+
+        <div class="specialty-item">
+          <div class="specialty-icon">
+            <img src="/assets/images/icons/Khoa-noi-nhi.png" alt="Khoa Da Liễu">
+          </div>
+          <h3>KHOA DA LIỄU</h3>
+        </div>
+
+        <div class="specialty-item">
+          <div class="specialty-icon">
+            <img src="/assets/images/icons/phauthatgayme.png" alt="Khoa Ung Bướu">
+          </div>
+          <h3>KHOA UNG BƯỚU</h3>
+        </div>
       </div>
-      <h2 class="section-title">ĐỘI NGŨ BÁC SĨ</h2>
-      <p class="section-description">Quy tụ đội ngũ chuyên gia hàng đầu của Bệnh viện Đa khoa Hòa Bình</p>
+    </div>
+    
+    <div class="specialties-indicators" id="specialtiesIndicators">
+      <!-- Thêm dots tĩnh thay vì để JavaScript tạo động -->
+      <span class="indicator active" data-index="0"></span>
+      <span class="indicator" data-index="1"></span>
+      <span class="indicator" data-index="2"></span>
+    </div>
+  </div>
+</section>
+
+<!-- Doctors Team Section -->
+<section class="section doctors-section">
+  <div class="section-header">
+    <div class="heartbeat-icon">
+      <img src="/assets/images/icons/heartbeat.png" alt="Heartbeat">
+    </div>
+    <h2 class="section-title">ĐỘI NGŨ BÁC SĨ</h2>
+    <p class="section-description">Quy tụ đội ngũ chuyên gia hàng đầu của Bệnh viện Đa khoa Hòa Bình</p>
+  </div>
+  
+  <div class="doctors-grid">
+    <div class="doctor-card">
+      <div class="doctor-image">
+        <img src="/assets/images/portrait/j97.png" alt="Bác sĩ 1">
+      </div>
+      <div class="doctor-info">
+        <div class="hospital-logo">
+          <img src="/assets/images/logo-hoa-binh.png" alt="Logo bệnh viện">
+        </div>
+        <h3 class="doctor-position">BÁC SĨ CKII</h3>
+        <h4 class="doctor-fullname">TRỊNH TRẦN PHƯƠNG TUẤN</h4>
+        <p class="doctor-specialty">KHOA NGOẠI, PHÓ GIÁM ĐỐC</p>
+      </div>
     </div>
     
-    <div class="doctors-grid">
-      <div class="doctor-card">
-        <div class="doctor-image">
-          <img src="/assets/images/doctors/doctor1.jpg" alt="Bác sĩ 1">
-          <div class="hospital-logo">
-            <img src="/assets/images/logo-small.png" alt="Logo bệnh viện">
-          </div>
-        </div>
-        <div class="doctor-info">
-          <h3 class="doctor-name">BÁC SĨ CKII</h3>
-          <h4 class="doctor-fullname">PHẠM VĂN MINH</h4>
-          <p class="doctor-specialty">KHOA NGOẠI, PHÓ GIÁM ĐỐC</p>
-        </div>
+    <!-- Thêm các doctor card khác tương tự -->
+    <div class="doctor-card">
+      <div class="doctor-image">
+        <img src="/assets/images/portrait/j97.png" alt="Bác sĩ 2">
       </div>
-      
-      <div class="doctor-card">
-        <div class="doctor-image">
-          <img src="/assets/images/doctors/doctor2.jpg" alt="Bác sĩ 2">
-          <div class="hospital-logo">
-            <img src="/assets/images/logo-small.png" alt="Logo bệnh viện">
-          </div>
+      <div class="doctor-info">
+        <div class="hospital-logo">
+          <img src="/assets/images/logo-hoa-binh.png" alt="Logo bệnh viện">
         </div>
-        <div class="doctor-info">
-          <h3 class="doctor-name">BÁC SĨ CKII</h3>
-          <h4 class="doctor-fullname">NGUYỄN VĂN A</h4>
-          <p class="doctor-specialty">KHOA NỘI, TRƯỞNG KHOA</p>
-        </div>
-      </div>
-      
-      <div class="doctor-card">
-        <div class="doctor-image">
-          <img src="/assets/images/doctors/doctor3.jpg" alt="Bác sĩ 3">
-          <div class="hospital-logo">
-            <img src="/assets/images/logo-small.png" alt="Logo bệnh viện">
-          </div>
-        </div>
-        <div class="doctor-info">
-          <h3 class="doctor-name">BÁC SĨ CKI</h3>
-          <h4 class="doctor-fullname">TRẦN VĂN B</h4>
-          <p class="doctor-specialty">KHOA TIM MẠCH</p>
-        </div>
-      </div>
-      
-      <div class="doctor-card">
-        <div class="doctor-image">
-          <img src="/assets/images/doctors/doctor4.jpg" alt="Bác sĩ 4">
-          <div class="hospital-logo">
-            <img src="/assets/images/logo-small.png" alt="Logo bệnh viện">
-          </div>
-        </div>
-        <div class="doctor-info">
-          <h3 class="doctor-name">BÁC SĨ CKII</h3>
-          <h4 class="doctor-fullname">LÊ THỊ C</h4>
-          <p class="doctor-specialty">KHOA SẢN, PHỤ KHOA</p>
-        </div>
+        <h3 class="doctor-position">BÁC SĨ CKII</h3>
+        <h4 class="doctor-fullname">TRỊNH TRẦN PHƯƠNG TUẤN</h4>
+        <p class="doctor-specialty">KHOA NGOẠI, PHÓ GIÁM ĐỐC</p>
       </div>
     </div>
-  </section>
+
+    <div class="doctor-card">
+      <div class="doctor-image">
+        <img src="/assets/images/portrait/j97.png" alt="Bác sĩ 3">
+      </div>
+      <div class="doctor-info">
+        <div class="hospital-logo">
+          <img src="/assets/images/logo-hoa-binh.png" alt="Logo bệnh viện">
+        </div>
+        <h3 class="doctor-position">BÁC SĨ CKII</h3>
+        <h4 class="doctor-fullname">TRỊNH TRẦN PHƯƠNG TUẤN</h4>
+        <p class="doctor-specialty">KHOA NGOẠI, PHÓ GIÁM ĐỐC</p>
+      </div>
+    </div>
+
+    <div class="doctor-card">
+      <div class="doctor-image">
+        <img src="/assets/images/portrait/j97.png" alt="Bác sĩ 4">
+      </div>
+      <div class="doctor-info">
+        <div class="hospital-logo">
+          <img src="/assets/images/logo-hoa-binh.png" alt="Logo bệnh viện">
+        </div>
+        <h3 class="doctor-position">BÁC SĨ CKII</h3>
+        <h4 class="doctor-fullname">TRỊNH TRẦN PHƯƠNG TUẤN</h4>
+        <p class="doctor-specialty">KHOA NGOẠI, PHÓ GIÁM ĐỐC</p>
+      </div>
+    </div>
+  </div>
+  
+</section>
 
   <!-- Appointment Section -->
   <section class="section appointment-section">
     <div class="section-header">
       <div class="heartbeat-icon">
-        <img src="/assets/images/heartbeat.svg" alt="Heartbeat">
+        <img src="/assets/images/icons/heartbeat3.png" alt="Heartbeat">
       </div>
       <h2 class="section-title">LỊCH KHÁM CHỮA BỆNH</h2>
     </div>
     
-    <div class="appointment-slider">
-      <button class="slider-nav prev">❮</button>
-      
-      <div class="appointment-cards">
-        <div class="appointment-card">
+    <div class="appointment-slider-container">
+      <button class="slider-nav prev" id="appointmentPrev" disabled>❮</button>
+      <div class="appointment-slider-wrapper">
+        <div class="appointment-cards" id="appointmentCards">
+          <div class="appointment-card">
           <img src="/assets/images/appointments/appointment1.jpg" alt="Lịch khám chuyên gia">
           <div class="appointment-content">
             <h3>LỊCH KHÁM CHUYÊN GIA HÀ NỘI THÁNG 11/2024 TẠI BỆNH VIỆN ĐA KHOA HÒA BÌNH - TP HẢI DƯƠNG</h3>
             <p>THÔNG BÁO LỊCH KHÁM CHUYÊN GIA HÀ NỘI THÁNG 11/2024 TẠI BỆNH VIỆN ĐA [...]</p>
+            <div class="appointment-date">
+              <span class="icon">🗓️</span> 10/11/2024
+            </div>
           </div>
         </div>
         
@@ -290,6 +374,9 @@
           <div class="appointment-content">
             <h3>LỊCH KHÁM CHUYÊN GIA HÀ NỘI THÁNG 07/2024</h3>
             <p>Nhằm nâng cao hơn nữa chất lượng công tác khám bệnh, chữa bệnh, cùng [...]</p>
+            <div class="appointment-date">
+              <span class="icon">🗓️</span> 10/11/2024
+            </div>
           </div>
         </div>
         
@@ -298,11 +385,58 @@
           <div class="appointment-content">
             <h3>Chuyên gia Tim mạch và Tiêu hoá từ Bệnh viện Tuyến Trung Ương</h3>
             <p>Bạn đang tìm kiếm một đội ngũ chuyên gia uy tín trong lĩnh vực [...]</p>
+            <div class="appointment-date">
+              <span class="icon">🗓️</span> 10/11/2024
+            </div>
+          </div>
+        </div>
+
+        <div class="appointment-card">
+          <img src="/assets/images/appointments/appointment4.jpg" alt="Chuyên gia Tim mạch">
+          <div class="appointment-content">
+            <h3>Chuyên gia Tim mạch và Tiêu hoá từ Bệnh viện Tuyến Trung Ương</h3>
+            <p>Bạn đang tìm kiếm một đội ngũ chuyên gia uy tín trong lĩnh vực [...]</p>
+            <div class="appointment-date">
+              <span class="icon">🗓️</span> 10/11/2024
+            </div>
+          </div>
+        </div>
+
+        <div class="appointment-card">
+          <img src="/assets/images/appointments/appointment4.jpg" alt="Chuyên gia Tim mạch">
+          <div class="appointment-content">
+            <h3>Chuyên gia Tim mạch và Tiêu hoá từ Bệnh viện Tuyến Trung Ương</h3>
+            <p>Bạn đang tìm kiếm một đội ngũ chuyên gia uy tín trong lĩnh vực [...]</p>
+            <div class="appointment-date">
+              <span class="icon">🗓️</span> 10/11/2024
+            </div>
+          </div>
+        </div>
+
+        <div class="appointment-card">
+          <img src="/assets/images/appointments/appointment4.jpg" alt="Chuyên gia Tim mạch">
+          <div class="appointment-content">
+            <h3>Chuyên gia Tim mạch và Tiêu hoá từ Bệnh viện Tuyến Trung Ương</h3>
+            <p>Bạn đang tìm kiếm một đội ngũ chuyên gia uy tín trong lĩnh vực [...]</p>
+            <div class="appointment-date">
+              <span class="icon">🗓️</span> 10/11/2024
+            </div>
+          </div>
+        </div>
+
+        <div class="appointment-card">
+          <img src="/assets/images/appointments/appointment4.jpg" alt="Chuyên gia Tim mạch">
+          <div class="appointment-content">
+            <h3>Chuyên gia Tim mạch và Tiêu hoá từ Bệnh viện Tuyến Trung Ương</h3>
+            <p>Bạn đang tìm kiếm một đội ngũ chuyên gia uy tín trong lĩnh vực [...]</p>
+            <div class="appointment-date">
+              <span class="icon">🗓️</span> 10/11/2024
+            </div>
           </div>
         </div>
       </div>
-      
-      <button class="slider-nav next">❯</button>
+    </div>
+      <button class="slider-nav next" id="appointmentNext">❯</button>
     </div>
   </section>
 

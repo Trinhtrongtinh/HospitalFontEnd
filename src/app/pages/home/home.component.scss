@@ -15,8 +15,8 @@ $box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 .hero-slider {
   position: relative;
   overflow: hidden;
-  margin-bottom: 40px;
-  
+  margin-bottom: 2em;
+  margin-top: 5em;
   .slider-container {
     position: relative;
     width: 100%;
@@ -24,11 +24,11 @@ $box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   
   .slider-wrapper {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    height: 50rem;
+    transform: translateX(-100%); // Start at the first original slide
+    height: 70vh;
     
     @media (max-width: 768px) {
-      height: auto;
+      height: 20vh;
     }
   }
   
@@ -47,7 +47,7 @@ $box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   
   .slider-controls {
     position: absolute;
-    bottom: 20px;
+    bottom: 10%;
     left: 0;
     right: 0;
     display: flex;
@@ -55,32 +55,32 @@ $box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     align-items: center;
     z-index: 10;
     
-    .slider-btn {
-      position: absolute;
-      background-color: rgba(255, 255, 255, 0.7);
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      cursor: pointer;
-      transition: all 0.3s ease;
+    // .slider-btn {
+    //   position: absolute;
+    //   background-color: rgba(255, 255, 255, 0.7);
+    //   border: none;
+    //   width: 40px;
+    //   height: 40px;
+    //   border-radius: 50%;
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   font-size: 18px;
+    //   cursor: pointer;
+    //   transition: all 0.3s ease;
       
-      &:hover {
-        background-color: white;
-      }
+    //   &:hover {
+    //     background-color: white;
+    //   }
       
-      &.prev {
-        left: 20px;
-      }
+    //   &.prev {
+    //     left: 20px;
+    //   }
       
-      &.next {
-        right: 20px;
-      }
-    }
+    //   &.next {
+    //     right: 20px;
+    //   }
+    // }
     
     .slider-dots {
       display: flex;
@@ -105,52 +105,75 @@ $box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
 // Hospital Introduction Section
 .hospital-intro-section {
+  background-color: $light-blue;
+  padding: 60px 20px;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: $primary-color;
+    }
+  }
+
   .intro-content {
     display: flex;
     flex-direction: column;
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-    
+
     @media (min-width: 992px) {
       flex-direction: row;
       align-items: center;
     }
-  }
-  
-  .intro-image {
-    flex: 1;
-    
-    img {
-      width: 100%;
-      border-radius: $border-radius;
-      box-shadow: $box-shadow;
-    }
-  }
-  
-  .intro-text {
-    flex: 1;
-    padding: 0 20px;
-    
-    p {
-      margin-bottom: 20px;
-      font-size: 16px;
-      
-      @media (min-width: 768px) {
-        font-size: 18px;
+
+    .intro-video {
+      flex: 1;
+      iframe {
+        width: 100%;
+        height: 315px;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+
+        @media (min-width: 992px) {
+          height: 400px;
+        }
       }
     }
-    
-    .intro-quote {
-      font-style: italic;
-      color: $accent-color;
-      font-weight: 600;
-      font-size: 18px;
-      margin-bottom: 30px;
-      
+
+    .intro-text {
+      flex: 1;
+      padding: 0 20px;
+
       p {
-        margin: 5px 0;
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: $text-color;
+
+        @media (min-width: 768px) {
+          font-size: 18px;
+        }
+      }
+
+      .intro-quote {
+        font-style: italic;
+        color: $accent-color;
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 30px;
+
+        p {
+          margin: 5px 0;
+        }
+      }
+
+      .btn-primary {
+        display: inline-block;
+        margin-top: 10px;
       }
     }
   }
@@ -242,122 +265,148 @@ $box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 // Facilities Section
+
 .facilities-section {
+  background-color: $light-blue;
+  padding: 60px 20px;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+
+    .heartbeat-icon {
+      margin-bottom: 15px;
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: $primary-color;
+    }
+
+    .section-subtitle {
+      font-size: 18px;
+      color: $secondary-color;
+      font-weight: 600;
+    }
+  }
+
   .facilities-content {
     display: flex;
     flex-direction: column;
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-    
+
     @media (min-width: 992px) {
       flex-direction: row;
       align-items: center;
     }
-  }
-  
-  .facilities-text {
-    @media (min-width: 992px) {
+
+    .facilities-text {
       flex: 1;
-      padding-right: 40px;
-    }
-    
-    p {
-      margin-bottom: 25px;
-    }
-  }
-  
-  .facilities-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    
-    li {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-      
-      .check-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 24px;
-        height: 24px;
-        background-color: $secondary-color;
-        color: white;
-        border-radius: 50%;
-        margin-right: 12px;
-        font-size: 14px;
+
+      p {
+        font-size: 16px;
+        color: $text-color;
+        margin-bottom: 20px;
       }
-    }
-  }
-  
-  .facilities-image {
-    position: relative;
-    
-    @media (min-width: 992px) {
-      flex: 1;
-    }
-    
-    img {
-      width: 100%;
-      border-radius: $border-radius;
-      box-shadow: $box-shadow;
-    }
-    
-    .image-navigation {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      
-      .nav-btn {
-        background-color: rgba(255, 255, 255, 0.7);
-        border: none;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        
-        &:hover {
-          background-color: white;
-        }
-        
-        &.prev {
-          margin-left: 10px;
-        }
-        
-        &.next {
-          margin-right: 10px;
+
+      .facilities-list {
+        list-style: none;
+        padding: 0;
+
+        li {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+
+          .check-icon {
+            color: $secondary-color;
+            font-size: 18px;
+            margin-right: 10px;
+          }
+
+          span {
+            font-size: 16px;
+            color: $text-color;
+          }
         }
       }
     }
-    
-    .image-indicators {
-      position: absolute;
-      bottom: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
-      
-      .indicator {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.5);
-        cursor: pointer;
-        
+
+    .facilities-slider {
+      flex: 1;
+      position: relative;
+
+      .facilities-image {
+        display: none;
+        width: 100%;
+        height: auto;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+
         &.active {
-          background-color: white;
+          display: block;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: $border-radius;
+        }
+      }
+
+      .image-navigation {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+
+        .nav-btn {
+          background-color: rgba(0, 0, 0, 0.5);
+          color: white;
+          border: none;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+          }
+        }
+      }
+
+      .image-indicators {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+
+        .indicator {
+          width: 12px;
+          height: 12px;
+          background-color: rgba(0, 0, 0, 0.3);
+          border-radius: 50%;
+          margin: 0 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &.active {
+            background-color: $primary-color;
+          }
         }
       }
     }
@@ -368,73 +417,199 @@ $box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 .specialties-section {
   background: $gradient-blue;
   color: white;
+  padding: 60px 0 80px; // Tăng padding dưới để có thêm không gian cho indicators
+  position: relative;
   
   .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+    
+    .heartbeat-icon {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+      
+      img {
+        width: 40px;
+        height: 40px;
+        animation: pulse 1.5s infinite;
+      }
+    }
+    
     .section-title {
       color: white;
+      font-size: 32px;
+      margin: 0;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      
+      @media (max-width: 768px) {
+        font-size: 26px;
+      }
     }
   }
   
-  .specialties-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 30px;
+  .specialties-container {
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
   
+  .specialties-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+  }
+  
+  .specialties-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+  }
+  
   .specialty-item {
+    flex: 0 0 calc(20% - 20px); // 5 items per row
+    min-width: calc(20% - 20px);
+    margin: 0 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px 15px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-5px);
+    }
+    
+    @media (max-width: 1200px) {
+      flex: 0 0 calc(25% - 20px); // 4 items per row
+      min-width: calc(25% - 20px);
+    }
+    
+    @media (max-width: 992px) {
+      flex: 0 0 calc(33.333% - 20px); // 3 items per row
+      min-width: calc(33.333% - 20px);
+    }
+    
+    @media (max-width: 768px) {
+      flex: 0 0 calc(50% - 20px); // 2 items per row
+      min-width: calc(50% - 20px);
+    }
+    
+    @media (max-width: 480px) {
+      flex: 0 0 calc(100% - 20px); // 1 item per row
+      min-width: calc(100% - 20px);
+    }
     
     .specialty-icon {
       width: 100px;
       height: 100px;
-      background-color: white;
-      border-radius: 50%;
+      margin-bottom: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 15px;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      padding: 15px;
+      transition: all 0.3s ease;
       
       img {
-        width: 60px;
-        height: 60px;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: brightness(0) invert(1); // Làm icon trắng
       }
     }
     
     h3 {
-      font-size: 16px;
-      font-weight: 500;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.4;
       margin: 0;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      
+      @media (max-width: 768px) {
+        font-size: 14px;
+        min-height: 50px;
+      }
     }
   }
   
-  .indicators {
+  .specialties-indicators {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
-    gap: 8px;
+    margin-top: 40px; // Tăng khoảng cách từ slide
+    gap: 12px; // Khoảng cách giữa các dots
     
-    .dot {
-      width: 10px;
-      height: 10px;
-      background-color: rgba(255, 255, 255, 0.5);
+    .indicator {
+      width: 16px; // Kích thước dot
+      height: 16px;
       border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.3);
       cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(255, 255, 255, 0.5); // Thêm viền
       
       &.active {
         background-color: white;
+        transform: scale(1.2); // Phóng to khi active
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.6); // Glow effect
+      }
+      
+      &:hover:not(.active) {
+        background-color: rgba(255, 255, 255, 0.7);
+        transform: scale(1.1);
+      }
+      
+      @media (max-width: 480px) {
+        width: 12px;
+        height: 12px;
       }
     }
   }
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
 // Doctors Team Section
 .doctors-section {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+    
+    .section-description {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 18px;
+      color: #555;
+    }
+  }
+  
   .doctors-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -445,152 +620,170 @@ $box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   
   .doctor-card {
-    background-color: white;
-    border-radius: $border-radius;
+    position: relative;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: $box-shadow;
-    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
     
-    &:hover {
-      transform: translateY(-5px);
-    }
-    
+    // Đảm bảo thẻ có kích thước đúng bằng kích thước ảnh
     .doctor-image {
-      position: relative;
+      width: 100%;
       
       img {
         width: 100%;
-        height: 300px;
-        object-fit: cover;
-      }
-      
-      .hospital-logo {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        
-        img {
-          width: 40px;
-          height: 40px;
-        }
+        height: auto;
+        display: block;
       }
     }
     
+    // Thiết lập phần thông tin bác sĩ
     .doctor-info {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.9); // Background trắng mờ
+      height: 25%; // Chiếm 1/4 từ dưới lên
       padding: 15px;
+      transform: translateY(100%); // Ẩn ban đầu
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
       
-      .doctor-name {
-        color: $primary-color;
-        font-size: 16px;
+      .hospital-logo {
+        position: absolute;
+        top: -20px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+        padding: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      
+      .doctor-position {
+        font-size: 12px;
         font-weight: 600;
+        color: $primary-color;
         margin: 0 0 5px;
       }
       
       .doctor-fullname {
-        color: $text-color;
-        font-size: 18px;
+        font-size: 14px;
         font-weight: 700;
         margin: 0 0 5px;
       }
       
       .doctor-specialty {
-        color: $accent-color;
-        font-size: 14px;
-        margin: 0;
+        font-size: 12px;
+        color: #666;
+      }
+    }
+    
+    // Hiệu ứng hover
+    &:hover {
+      .doctor-info {
+        transform: translateY(0); // Hiển thị thông tin khi hover
       }
     }
   }
+  
 }
 
 // Medical Services Section
-// Medical Services Section
 .services-section {
-  min-height: 90vh; // Nearly fullscreen height
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 50px 0;
-  
+  background-color: $light-blue;
+  padding: 60px 20px;
+
   .section-header {
-    margin-bottom: 60px; // Increased spacing
+    text-align: center;
+    margin-bottom: 40px;
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: $primary-color;
+      margin-bottom: 10px;
+    }
   }
-  
+
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); // Fixed 3 columns for better layout
-    gap: 40px; // Increased gap
-    width: 90%; // Using percentage instead of max-width
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0;
-    
-    @media (max-width: 992px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-      width: 80%;
-    }
   }
-  
+
   .service-card {
-    display: flex;
-    flex-direction: column;
-    position: relative;
+    background-color: white;
     border-radius: $border-radius;
     overflow: hidden;
     box-shadow: $box-shadow;
     transition: transform 0.3s ease;
-    height: 40rem; // Fixed height for consistency
+    display: flex;
+    flex-direction: column;
+    height: 400px; // Thiết lập chiều cao cố định cho card
 
-
-    
     &:hover {
       transform: translateY(-5px);
     }
-    
+
     .service-image {
-      flex:2;
-      display:block;
+      width: 100%;
+      height: 70%; // Chiếm 70% chiều cao của card
+      overflow: hidden;
+
       img {
         width: 100%;
-        height: 60%; // Increased image height
-        object-fit: cover;
+        height: 100%;
+        object-fit: cover; // Thay đổi thành cover để ảnh lấp đầy không gian
+        display: block;
       }
     }
-    
-    .service-icon {
-      position: absolute;
-      bottom: 60px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px; // Larger icon
-      height: 80px; // Larger icon
-      background-color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      
-      img {
-        width: 40px; // Larger icon image
-        height: 40px; // Larger icon image
-      }
-    }
-    
-    .service-title-block{
 
-      flex:1;
+    .service-content {
+      padding: 20px;
+      text-align: center;
+      height: 30%; // Chiếm 30% chiều cao còn lại
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .service-icon {
+        width: 50px;
+        height: 50px;
+        margin: -45px auto 15px;
+        background-color: $primary-color;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+
+        img {
+          width: 25px;
+          height: 25px;
+        }
+      }
+
       .service-title {
-        background-color: white;
-        text-align: center;
-        font-size: 22px; // Larger font
+        font-size: 18px;
         font-weight: 600;
-        margin: 0;
-        align-items: bottom;
-        display:block;
+        color: $text-color;
+        margin-bottom: 8px;
       }
     }
   }
@@ -712,79 +905,160 @@ $box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
 // Appointment Section
 .appointment-section {
-  .appointment-slider {
+  background-color: #f5f8fd;
+  padding: 60px 0;
+  
+  .section-header {
+    margin-bottom: 50px;
+  }
+  
+  .appointment-slider-container {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 60px;
+    overflow: hidden;
+  }
+  
+  .appointment-slider-wrapper {
+    overflow: hidden;
+    margin: 0 10px;
+  }
+  
+  .appointment-cards {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 25px;
+  }
+  
+  .appointment-card {
+    min-width: calc(33.333% - 17px);
+    flex: 0 0 calc(33.333% - 17px);
+    background-color: white;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 380px; // Thêm chiều cao cố định cho card
+    display: flex;
+    flex-direction: column;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+    
+    @media (max-width: 992px) {
+      min-width: calc(50% - 13px);
+      flex: 0 0 calc(50% - 13px);
+      height: 350px;
+    }
+    
+    @media (max-width: 576px) {
+      min-width: 100%;
+      flex: 0 0 100%;
+      height: 380px;
+    }
+    
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    &:hover img {
+      transform: scale(1.05);
+    }
+    
+    .appointment-content {
+      padding: 20px 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-top: 3px solid $primary-color;
+      background: linear-gradient(180deg, #f9f9f9 0%, #ffffff 100%);
+      
+      h3 {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0 0 15px;
+        color: $primary-color;
+        line-height: 1.4;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        
+        @media (max-width: 992px) {
+          font-size: 15px;
+        }
+      }
+      
+      p {
+        font-size: 14px;
+        color: #666;
+        margin: 0 0 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      
+      .appointment-date {
+        display: flex;
+        align-items: center;
+        color: $accent-color;
+        font-size: 13px;
+        font-weight: 600;
+        margin-top: auto;
+        
+        .icon {
+          margin-right: 5px;
+        }
+      }
+    }
   }
   
   .slider-nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 102, 179, 0.7);
+    color: white;
     border: none;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     z-index: 1;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.2);
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    
+    &:hover:not(:disabled) {
+      background-color: rgba(0, 102, 179, 0.9);
+      transform: translateY(-50%) scale(1.1);
     }
     
     &.prev {
-      left: 0;
+      left: 10px;
     }
     
     &.next {
-      right: 0;
-    }
-  }
-  
-  .appointment-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  
-  .appointment-card {
-    background-color: white;
-    border-radius: $border-radius;
-    overflow: hidden;
-    box-shadow: $box-shadow;
-    
-    img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    
-    .appointment-content {
-      padding: 20px;
-      
-      h3 {
-        font-size: 16px;
-        font-weight: 600;
-        margin: 0 0 10px;
-      }
-      
-      p {
-        font-size: 14px;
-        color: #666;
-        margin: 0;
-      }
+      right: 10px;
     }
   }
 }

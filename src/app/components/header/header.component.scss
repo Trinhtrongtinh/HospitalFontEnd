@@ -1,0 +1,518 @@
+// =========================================
+// VARIABLES
+// =========================================
+// Colors
+$primary-color: #0066b3;
+$secondary-color: #00a651;
+$accent-color: #e30613;
+$text-color: #333333;
+$text-light: #ffffff;
+$gray-light: #f5f5f5;
+$gray-medium: #eeeeee;
+$gray-dark: #666666;
+
+// Gradients
+$gradient-primary: linear-gradient(90deg, #1e3c72 0%, #2a5298 50%, #2c8ea6 100%);
+
+// Typography
+$font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+$font-secondary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+// Spacing
+$spacing-xs: 0.25rem;  // 4px
+$spacing-sm: 0.5rem;   // 8px
+$spacing-md: 1rem;     // 16px
+$spacing-lg: 1.5rem;   // 24px
+$spacing-xl: 2rem;     // 32px
+
+// Effects
+$box-shadow-light: 0 2px 5px rgba(0, 0, 0, 0.1);
+$box-shadow-medium: 0 4px 10px rgba(0, 0, 0, 0.1);
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 20px;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// =========================================
+// BASE STYLES
+// =========================================
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Thêm class cho body để điều chỉnh padding-top
+body {
+  font-family: $font-secondary;
+  color: $text-color;
+  padding-top: 0; // Bỏ padding-top mặc định
+  line-height: 1.6;
+  
+  &.scrolled {
+    padding-top: 60px; // Thêm padding bằng chiều cao của nav khi scroll
+    
+    @media (max-width: $breakpoint-lg) {
+      padding-top: 80px;
+    }
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+  width: 100%;
+}
+
+// =========================================
+// TYPOGRAPHY
+// =========================================
+h1, h2, h3, h4, h5, h6,
+.heading {
+  font-family: $font-primary;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.heading-bold {
+  font-weight: 700;
+}
+
+// =========================================
+// HEADER
+// =========================================
+.header {
+  position: relative; // Thay đổi từ fixed thành relative
+  width: 100%;
+  z-index: 1000;
+  background-color: $text-light;
+}
+
+// =========================================
+// TOP HEADER
+// =========================================
+.top-header {
+  background: $gradient-primary;
+  color: $text-light;
+  padding: $spacing-sm 0;
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  @media (max-width: $breakpoint-lg) {
+    display: none; // Hide on mobile
+  }
+}
+
+// Logo
+.logo-container {
+  .logo {
+    display: block;
+    
+    img {
+      height: 80px;
+      width: auto;
+      transition: height 0.3s ease;
+    }
+  }
+}
+
+// Contact Info
+.contact-info {
+  display: flex;
+  gap: $spacing-xl;
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    
+    img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+    }
+    
+    .contact-text {
+      display: flex;
+      flex-direction: column;
+      
+      .label {
+        font-family: $font-secondary;
+        font-size: 14px;
+        opacity: 0.9;
+      }
+      
+      .value {
+        font-family: $font-primary;
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+// Header Actions
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  
+  .register-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid $text-light;
+    color: $text-light;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius-lg;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: $font-primary;
+    transition: all 0.3s ease;
+    display: inline-block;
+    
+    &:hover {
+      background-color: $text-light;
+      color: $primary-color;
+      transform: translateY(-2px);
+    }
+  }
+  
+  .language-selector {
+    .language-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid $text-light;
+      border-radius: $border-radius-sm;
+      color: $text-light;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: $font-primary;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: $text-light;
+        color: $primary-color;
+        transform: scale(1.05);
+      }
+    }
+  }
+  
+  .top-links {
+    display: flex;
+    gap: $spacing-md;
+    
+    a {
+      color: $text-light;
+      text-decoration: none;
+      font-size: 14px;
+      font-family: $font-secondary;
+      transition: opacity 0.3s ease;
+      
+      &:hover {
+        opacity: 0.8;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// =========================================
+// MAIN NAVIGATION
+// =========================================
+.main-nav {
+  background-color: $text-light;
+  border-bottom: 1px solid $gray-medium;
+  position: fixed; // Thêm position fixed
+  top: 0; // Bắt đầu ở vị trí top 0
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transform: translateY(0); // Chuẩn bị cho hiệu ứng
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &.with-shadow {
+    box-shadow: $box-shadow-medium;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 60px;
+  }
+  
+  @media (max-width: $breakpoint-lg) {
+    // Giữ nguyên các thiết lập cho mobile
+  }
+}
+
+// Mobile Elements
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: $spacing-sm;
+  z-index: 1001;
+  
+  span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: $text-color;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+  
+  &.active {
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+  
+  @media (max-width: $breakpoint-lg) {
+    display: block;
+  }
+}
+
+.mobile-logo {
+  display: none;
+  text-align: center;
+  flex-grow: 1;
+  
+  img {
+    height: 50px;
+    width: auto;
+  }
+  
+  @media (max-width: $breakpoint-lg) {
+    display: block;
+  }
+}
+
+.mobile-actions {
+  display: none;
+  align-items: center;
+  gap: $spacing-sm;
+  
+  .mobile-language,
+  .mobile-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $gray-medium;
+    border-radius: $border-radius-sm;
+    color: $primary-color;
+    text-decoration: none;
+    
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  @media (max-width: $breakpoint-lg) {
+    display: flex;
+  }
+}
+
+// Main Menu
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  
+  > li {
+    position: relative;
+    
+    > a {
+      display: flex;
+      align-items: center;
+      color: $text-color;
+      text-decoration: none;
+      padding: $spacing-md $spacing-lg;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: $font-primary;
+      letter-spacing: 0.3px;
+      transition: all 0.3s ease;
+      
+      &:hover, &.active {
+        color: $primary-color;
+      }
+      
+      .dropdown-arrow {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 6px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid currentColor;
+        transition: transform 0.3s ease;
+      }
+    }
+    
+    &.has-dropdown {
+      &:hover .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      &.active > a .dropdown-arrow {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+  
+  @media (max-width: $breakpoint-lg) {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: $text-light;
+    flex-direction: column;
+    overflow-y: auto;
+    z-index: 1000;
+    padding: 0;
+    
+    &.active {
+      display: block;
+    }
+    
+    > li {
+      border-bottom: 1px solid $gray-medium;
+      
+      > a {
+        padding: $spacing-lg;
+        justify-content: space-between;
+      }
+      
+      &.has-dropdown {
+        &:hover .dropdown-menu {
+          visibility: hidden;
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        
+        &.active .dropdown-menu {
+          visibility: visible;
+          opacity: 1;
+          transform: translateY(0);
+          position: static;
+          box-shadow: none;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+// Dropdown Menu
+.dropdown-menu {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background-color: $text-light;
+  box-shadow: $box-shadow-medium;
+  border-radius: $border-radius-sm;
+  z-index: 10;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+  padding: $spacing-sm 0;
+  
+  li {
+    list-style: none;
+    
+    a {
+      display: block;
+      padding: $spacing-sm $spacing-md;
+      color: $text-color;
+      text-decoration: none;
+      font-size: 14px;
+      font-family: $font-secondary;
+      transition: all 0.2s ease;
+      
+      &:hover {
+        background-color: $gray-light;
+        color: $primary-color;
+        padding-left: $spacing-lg;
+      }
+    }
+  }
+  
+  @media (max-width: $breakpoint-lg) {
+    box-shadow: none;
+    background-color: $gray-light;
+    
+    li a {
+      padding: $spacing-md $spacing-xl;
+      
+      &:hover {
+        padding-left: calc($spacing-xl + $spacing-sm);
+      }
+    }
+  }
+}
+
+// Mobile Menu Overlay
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  
+  &.active {
+    display: block;
+  }
+}
+
+// =========================================
+// UTILITIES
+// =========================================
+.desktop-only {
+  @media (max-width: $breakpoint-lg) {
+    display: none !important;
+  }
+}
+
+.mobile-only {
+  display: none !important;
+  
+  @media (max-width: $breakpoint-lg) {
+    display: flex !important;
+  }
+}
