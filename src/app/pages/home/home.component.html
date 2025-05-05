@@ -440,71 +440,233 @@
     </div>
   </section>
 
-  <!-- News Section -->
-  <section class="section news-section">
-    <div class="section-header">
-      <div class="heartbeat-icon">
-        <img src="/assets/images/heartbeat.svg" alt="Heartbeat">
-      </div>
-      <h2 class="section-title">TIN TỨC BỆNH VIỆN</h2>
+<!-- News Section -->
+<section class="section news-section">
+  <div class="section-header">
+    <div class="heartbeat-icon">
+      <img src="/assets/images/icons/heartbeat.png" alt="Heartbeat">
     </div>
-    
-    <div class="news-tabs">
-      <div class="tab-header">
-        <button class="tab-btn active">TIN TỨC</button>
-        <button class="tab-btn">Y HỌC THƯỜNG THỨC</button>
-        <button class="tab-btn">CÂU HỎI THƯỜNG GẶP</button>
+    <h2 class="section-title">TIN TỨC BỆNH VIỆN</h2>
+  </div>
+  
+  <div class="news-container">
+    <!-- Tin tức column -->
+    <div class="news-column">
+      <div class="column-header">
+        <h3>TIN TỨC</h3>
       </div>
-      
-      <div class="tab-content">
-        <div class="news-grid">
-          <div class="news-card">
+      <div class="news-items-container">
+        <!-- Scrollable container -->
+        <div class="news-items">
+          <!-- First item with image -->
+          <div class="news-item with-image">
             <div class="news-image">
               <img src="/assets/images/news/news1.jpg" alt="Tin tức 1">
             </div>
             <div class="news-content">
-              <h3 class="news-title">BỆNH VIỆN ĐA KHOA HÒA BÌNH – ĐỘT PHÁ TRONG CHẨN ĐOÁN UNG THƯ VỚI HỆ THỐNG MÁY CHỤP PET/CT HIỆN ĐẠI</h3>
+              <h4 class="news-title">BỆNH VIỆN ĐA KHOA HÒA BÌNH – ĐỘT PHÁ TRONG CHẨN ĐOÁN UNG THƯ VỚI HỆ THỐNG MÁY CHỤP PET/CT HIỆN ĐẠI</h4>
               <p class="news-date">03/04/2025</p>
-              <a href="#" class="news-link">XEM THÊM >></a>
+              <a href="#" class="news-link">XEM THÊM</a>
             </div>
           </div>
           
-          <div class="news-card">
+          <!-- Regular items -->
+          <div class="news-item">
             <div class="news-content">
-              <h3 class="news-title">Bệnh viện Đa khoa Hòa Bình: "Trị bệnh bằng khối óc, chăm sóc bằng trái tim"</h3>
+              <h4 class="news-title">Bệnh viện Đa khoa Hòa Bình: "Trị bệnh bằng khối óc, chăm sóc bằng trái tim"</h4>
               <p class="news-date">10/02/2025</p>
-              <a href="#" class="news-link">XEM THÊM >></a>
+              <a href="#" class="news-link">XEM THÊM</a>
             </div>
           </div>
           
-          <div class="news-card">
+          <div class="news-item">
             <div class="news-content">
-              <h3 class="news-title">Bệnh viện Đa khoa Hòa Bình nâng cao chất lượng dịch vụ vì người bệnh</h3>
+              <h4 class="news-title">Bệnh viện Đa khoa Hòa Bình nâng cao chất lượng dịch vụ vì người bệnh</h4>
               <p class="news-date">10/02/2025</p>
-              <a href="#" class="news-link">XEM THÊM >></a>
+              <a href="#" class="news-link">XEM THÊM</a>
+            </div>
+          </div>
+          
+          <!-- More items (initially hidden, visible on scroll) -->
+          <div class="news-item">
+            <div class="news-content">
+              <h4 class="news-title">Khánh thành Khoa Chẩn đoán hình ảnh mới với trang thiết bị hiện đại</h4>
+              <p class="news-date">28/01/2025</p>
+              <a href="#" class="news-link">XEM THÊM</a>
+            </div>
+          </div>
+          
+          <div class="news-item">
+            <div class="news-content">
+              <h4 class="news-title">Lễ ký kết hợp tác chuyên môn với Bệnh viện Bạch Mai</h4>
+              <p class="news-date">15/01/2025</p>
+              <a href="#" class="news-link">XEM THÊM</a>
+            </div>
+          </div>
+          
+          <div class="news-item">
+            <div class="news-content">
+              <h4 class="news-title">Hiệu quả chương trình tiêm chủng mở rộng tại Bệnh viện Đa khoa Hòa Bình</h4>
+              <p class="news-date">05/01/2025</p>
+              <a href="#" class="news-link">XEM THÊM</a>
+            </div>
+          </div>
+          
+          <div class="news-item">
+            <div class="news-content">
+              <h4 class="news-title">Tổng kết hoạt động khám chữa bệnh năm 2024 và kế hoạch năm 2025</h4>
+              <p class="news-date">22/12/2024</p>
+              <a href="#" class="news-link">XEM THÊM</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Floating Contact Buttons -->
-  <div class="floating-contact">
-    <a href="#" class="contact-btn register">
-      <img src="/assets/images/icons/register.svg" alt="Đăng ký tư vấn">
-      <span>ĐĂNG KÝ TƯ VẤN</span>
-    </a>
     
-    <a href="tel:0976091115" class="contact-btn hotline">
-      <img src="/assets/images/icons/phone.svg" alt="Hotline">
-      <span>HOTLINE</span>
-      <span class="phone-number">0976-091-115</span>
-    </a>
+    <!-- Y học thường thức column -->
+    <div class="news-column">
+      <div class="column-header">
+        <h3>Y HỌC THƯỜNG THỨC</h3>
+      </div>
+      <div class="news-items-container">
+        <!-- Scrollable container -->
+        <div class="news-items">
+          <!-- First item with image -->
+          <div class="news-item with-image">
+            <div class="news-image">
+              <img src="/assets/images/news/medical1.jpg" alt="Y học thường thức 1">
+            </div>
+            <div class="news-content">
+              <h4 class="news-title">Phát hiện sớm dấu hiệu đột quỵ - "Thời gian là não"</h4>
+              <p class="news-date">05/04/2025</p>
+              <a href="#" class="news-link">XEM THÊM</a>
+            </div>
+          </div>
+          
+          <!-- Regular items -->
+          <div class="news-item">
+            <div class="news-content">
+              <h4 class="news-title">Chế độ dinh dưỡng cho người bệnh đái tháo đường</h4>
+              <p class="news-date">28/03/2025</p>
+              <a href="#" class="news-link">XEM THÊM</a>
+            </div>
+          </div>
+          
+          <div class="news-item">
+            <div class="news-content">
+              <h4 class="news-title">Phòng ngừa các bệnh đường hô hấp trong mùa lạnh</h4>
+              <p class="news-date">15/03/2025</p>
+              <a href="#" class="news-link">XEM THÊM</a>
+            </div>
+          </div>
+          
+          <!-- More items (initially hidden, visible on scroll) -->
+          <div class="news-item">
+            <div class="news-content">
+              <h4 class="news-title">Tác hại của thuốc lá đối với sức khỏe tim mạch</h4>
+              <p class="news-date">02/03/2025</p>
+              <a href="#" class="news-link">XEM THÊM</a>
+            </div>
+          </div>
+          
+          <div class="news-item">
+            <div class="news-content">
+              <h4 class="news-title">Tự kiểm tra vú tại nhà - Cách thực hiện đúng</h4>
+              <p class="news-date">15/02/2025</p>
+              <a href="#" class="news-link">XEM THÊM</a>
+            </div>
+          </div>
+          
+          <div class="news-item">
+            <div class="news-content">
+              <h4 class="news-title">Chăm sóc sức khỏe phụ nữ mang thai trong 3 tháng đầu</h4>
+              <p class="news-date">01/02/2025</p>
+              <a href="#" class="news-link">XEM THÊM</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
-    <a href="#" class="contact-btn location">
-      <img src="/assets/images/icons/location.svg" alt="Địa chỉ">
-      <span>ĐỊA CHỈ BỆNH VIỆN</span>
-    </a>
+    <!-- Câu hỏi thường gặp column -->
+    <div class="news-column">
+      <div class="column-header">
+        <h3>CÂU HỎI THƯỜNG GẶP</h3>
+      </div>
+      <div class="news-items-container">
+        <!-- Scrollable container -->
+        <div class="news-items">
+          <!-- All items with question mark icon -->
+          <div class="news-item faq-item">
+            <div class="question-icon">
+              <span>?</span>
+            </div>
+            <div class="news-content">
+              <h4 class="news-title">Làm thế nào để đăng ký khám bệnh online tại bệnh viện?</h4>
+              <p class="news-date">05/04/2025</p>
+              <a href="#" class="news-link answer-link">TRẢ LỜI</a>
+            </div>
+          </div>
+          
+          <div class="news-item faq-item">
+            <div class="question-icon">
+              <span>?</span>
+            </div>
+            <div class="news-content">
+              <h4 class="news-title">Chi phí khám sức khỏe tổng quát là bao nhiêu?</h4>
+              <p class="news-date">01/04/2025</p>
+              <a href="#" class="news-link answer-link">TRẢ LỜI</a>
+            </div>
+          </div>
+          
+          <div class="news-item faq-item">
+            <div class="question-icon">
+              <span>?</span>
+            </div>
+            <div class="news-content">
+              <h4 class="news-title">Bệnh viện có chấp nhận thanh toán qua thẻ BHYT không?</h4>
+              <p class="news-date">25/03/2025</p>
+              <a href="#" class="news-link answer-link">TRẢ LỜI</a>
+            </div>
+          </div>
+          
+          <!-- More items (initially hidden, visible on scroll) -->
+          <div class="news-item faq-item">
+            <div class="question-icon">
+              <span>?</span>
+            </div>
+            <div class="news-content">
+              <h4 class="news-title">Thời gian làm việc của bệnh viện là mấy giờ?</h4>
+              <p class="news-date">20/03/2025</p>
+              <a href="#" class="news-link answer-link">TRẢ LỜI</a>
+            </div>
+          </div>
+          
+          <div class="news-item faq-item">
+            <div class="question-icon">
+              <span>?</span>
+            </div>
+            <div class="news-content">
+              <h4 class="news-title">Chụp X-quang có cần nhịn ăn trước khi chụp không?</h4>
+              <p class="news-date">15/03/2025</p>
+              <a href="#" class="news-link answer-link">TRẢ LỜI</a>
+            </div>
+          </div>
+          
+          <div class="news-item faq-item">
+            <div class="question-icon">
+              <span>?</span>
+            </div>
+            <div class="news-content">
+              <h4 class="news-title">Bệnh viện có khám bệnh vào ngày thứ 7 và chủ nhật không?</h4>
+              <p class="news-date">10/03/2025</p>
+              <a href="#" class="news-link answer-link">TRẢ LỜI</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
+
 </div>

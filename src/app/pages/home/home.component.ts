@@ -43,6 +43,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.initAppointmentSlider();
     this.initSpecialtiesSlider();
     this.initNewsTabs();
+    this.initNewsSmoothScroll();
     
     // Check initial window size for responsive elements
     this.handleWindowResize();
@@ -565,6 +566,14 @@ export class HomeComponent implements OnInit, OnDestroy {
       } else {
         content.classList.remove('active');
       }
+    });
+  }
+
+  initNewsSmoothScroll() {
+    // Chỉ thêm smooth-scroll behavior cho các news-items containers
+    const newsItems = document.querySelectorAll('.news-items');
+    newsItems.forEach((container) => {
+      container.classList.add('smooth-scroll');
     });
   }
 
